@@ -31,7 +31,9 @@ public class FoodTruck {
 	public int getUniqueId() {
 		return uniqueId;
 	}
-
+	//no set method for getUniqueId as it's provided by another field and
+	//initialized as final anyway
+	
 	public String getName() {
 		return name;
 	}

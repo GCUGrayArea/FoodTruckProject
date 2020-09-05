@@ -13,6 +13,8 @@ public class FoodTruckProject {
 		trucks.foodTruckArr = trucks.enterFoodTrucks(kb);
 		trucks.workWithTrucks(kb); //no need for a loop; hooray for tail calls
 
+		//no loose ends
+		trucks = null;
 		kb.close();
 	}
 
