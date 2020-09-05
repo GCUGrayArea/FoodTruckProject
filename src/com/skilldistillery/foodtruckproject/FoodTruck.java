@@ -3,6 +3,7 @@ package com.skilldistillery.foodtruckproject;
 public class FoodTruck {
 	//Only static field needed, provides uniqueId values and makes it easy to
 	//trim the array of FoodTruck's to length. Part of user story #1.
+	//Left public so it can be used for convenience in FoodTruckProject.
 	public static int foodTrucksEntered;
 
 	// all instance-specific so these shouldn't be static even if it were allowed
@@ -26,9 +27,6 @@ public class FoodTruck {
 	}
 	
 	//no real *need* to use getters and setters  this, but can't let folk think I haven't been paying attention
-	public int getFoodTrucksEntered() {
-		return foodTrucksEntered;
-	}
 	
 	public int getUniqueId() {
 		return uniqueId;
