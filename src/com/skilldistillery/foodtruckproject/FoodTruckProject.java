@@ -6,19 +6,21 @@ public class FoodTruckProject {
 	private FoodTruck[] foodTruckArr;
 
 	public static void main(String[] args) {
-
+		
+		boolean inMenu;
 		java.util.Scanner kb = new java.util.Scanner(System.in);
 
 		FoodTruckProject trucks = new FoodTruckProject();
 		trucks.foodTruckArr = trucks.enterFoodTrucks(kb);
-		trucks.workWithTrucks(kb); //no need for a loop; hooray for tail calls
-
+		do {
+			inMenu = trucks.workWithTrucks(kb);
+		} while ( inMenu );
 		//no loose ends
 		trucks = null;
 		kb.close();
 	}
 
-	private void workWithTrucks(java.util.Scanner kb) {
+	private boolean workWithTrucks(java.util.Scanner kb) {
 		int menuSelection;
 		printMenu();
 		menuSelection = kb.nextInt();
@@ -28,7 +30,7 @@ public class FoodTruckProject {
 		switch (menuSelection) {
 			case 4:
 				System.out.println("We hope you use our program again. Have a nice day!");
-				return;
+				return false;
 			case 1:
 				displayFoodTrucks();
 				break;
@@ -42,9 +44,7 @@ public class FoodTruckProject {
 				System.out.println("Input not recognized. Please selection an option (1 - 4) to continue.");
 				break;				
 		}
-		// tail call will always occur unless 4 was entered above
-		// i.e. (the user chooses to quit), as requested in user story #4
-		workWithTrucks(kb);
+		return true;
 
 	}
 	
