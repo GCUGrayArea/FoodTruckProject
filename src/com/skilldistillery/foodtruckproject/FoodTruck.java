@@ -60,7 +60,13 @@ public class FoodTruck {
 
 	@Override
 	public String toString() {
-		return "FoodTruck [uniqueId=" + getUniqueId() + ", name=" + getName() + ", rating=" + getRating() + "]";
+		//return "FoodTruck [uniqueId=" + getUniqueId() + ", name=" + getName() + ", rating=" + getRating() + "]";
+		return String.format(
+				"uniqueId = %d, name = %s, cuisibe = %s, rating = %.1f", 
+				getUniqueId() ,
+				getName() ,
+				getCuisine() ,
+				getRating());
 	}
 	
 	

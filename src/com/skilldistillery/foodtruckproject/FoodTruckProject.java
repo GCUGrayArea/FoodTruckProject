@@ -12,9 +12,11 @@ public class FoodTruckProject {
 
 		FoodTruckProject trucks = new FoodTruckProject();
 		trucks.foodTruckArr = trucks.enterFoodTrucks(kb);
+		trucks.workWithTrucks(kb);
 		do {
 			inMenu = trucks.workWithTrucks(kb);
 		} while ( inMenu );
+		
 		//no loose ends
 		trucks = null;
 		kb.close();
@@ -28,24 +30,23 @@ public class FoodTruckProject {
 		//to make one work for menu input previously. unfortunately not
 		//sure what I'd been doing wrong
 		switch (menuSelection) {
-			case 4:
-				System.out.println("We hope you use our program again. Have a nice day!");
-				return false;
-			case 1:
-				displayFoodTrucks();
-				break;
-			case 2:
-				displayAverageTruckRating();
-				break;
-			case 3:
-				displayHighestRatedTruck();
-				break;
-			default:
-				System.out.println("Input not recognized. Please selection an option (1 - 4) to continue.");
-				break;				
+		case 4:
+			System.out.println("We hope you use our program again. Have a nice day!");
+			return false;
+		case 1:
+			displayFoodTrucks();
+			break;
+		case 2:
+			displayAverageTruckRating();
+			break;
+		case 3:
+			displayHighestRatedTruck();
+			break;
+		default:
+			System.out.println("Input not recognized. Please selection an option (1 - 4) to continue.");
+			break;				
 		}
 		return true;
-
 	}
 	
 	private void displayAverageTruckRating() {
